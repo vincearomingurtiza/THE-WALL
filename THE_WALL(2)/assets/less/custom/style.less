@@ -1,0 +1,787 @@
+@background: #2C2D34;
+@blue: #00A3FF;
+@comment_text: #9496A1;
+@dark_grey: #31354F;
+@font: #6D7186;
+@forum_background: #1E1F25;
+@forum_details: #A3A3FF;
+@hover_btn: #0050C8;
+@red: #EB5757;
+@white: #FFFFFF;
+
+@font-face {
+    font-family: roboto_regular;
+    src: url("../../fonts/Roboto-Regular.ttf");
+}
+@font-face {
+    font-family: roboto_italic;
+    src: url("../../fonts/Roboto-Italic.ttf");
+}
+@media screen {
+    font-family: roboto_bold;
+    src: url("../../fonts/Roboto-Bold.ttf");
+}
+
+*{
+    box-sizing: border-box;
+    color: @font;
+    font-family: roboto_regular;
+    margin: 0px;
+    padding: 0px;
+}
+
+.hidden{
+    display: none !important;
+}
+
+body{
+    background-color: @background;
+    
+    #wrapper{
+        .signup_signin_container{
+            background-color: #3B3C43;
+            border-radius: 10px;
+            font-size: 0px;
+            margin: 0px auto;
+            margin-top: 220px;
+            max-width: 876px;
+            overflow: hidden;
+
+            &.hide{
+                display: none;
+            }
+
+            #signup_form, #signin_form{
+                background-color: #1D1F2B;
+                display: inline-block;
+                padding: 75px 78px;
+                vertical-align: top;
+                width: 671px;
+
+                h2{
+                    color: @white;
+                    font: 21px/16px roboto_regular, sans-serif;
+                    padding: 0px 0px 7px 75px;
+                    position: relative;
+
+                    &::after{
+                        background-image: url("../../img/the-wall-logo-grey.png");
+                        content: "";
+                        display: inline-block;
+                        height: 46px;
+                        left: 0px;
+                        position: absolute;
+                        top: 0px;
+                        width: 46px;
+                    }
+                }
+                
+                h3{
+                    color: @font;
+                    font: 17.5108px/21px roboto_regular, sans-serif;
+                    padding-left: 75px;
+                }
+
+                .signup_fields{
+                    margin-top: 52px;
+
+                    .input_container{
+                        display: inline-block;
+                        vertical-align: top;
+                        width: 252px;
+
+                        &:nth-child(1){
+                            margin-right: 11px;
+                        }
+
+                        label{
+                            font-size: 14px;
+                        }
+
+                        input{
+                            background-color: @dark_grey;
+                            border-radius: 9px;
+                            border: none;
+                            box-sizing: border-box;
+                            color: @white;
+                            font: 16px roboto_regular;
+                            margin: 8px 0px 17px 0px;
+                            padding: 25px 20px 22px 20px;
+                            width: 250px;
+
+                            &:focus{
+                                outline: solid 1px @blue;
+                            }
+
+                            &.error{
+                                outline: solid 1px @red;
+                            }
+                        }
+                    }
+                    
+                    label{
+                        display: block;
+                        font-size: 14px;
+                    }
+
+                    input{
+                        background-color: @dark_grey;
+                        border-radius: 9px;
+                        border: none;
+                        color: @white;
+                        font: 16px roboto_regular;
+                        margin: 8px 0px 17px 0px;
+                        padding: 25px 20px 22px 20px;
+                        width: 100%;
+
+                        &:focus{
+                            outline: solid 1px @blue;
+                        }
+
+                        &.error{
+                            outline: solid 1px @red;
+                        }
+                    }
+
+                    #signup_btn, #signin_btn{
+                        background-color: @blue;
+                        border-radius: 9px;
+                        border: none;
+                        color: @white;
+                        cursor: pointer;
+                        font: 21px roboto_bold, sans-serif;
+                        height: 60px;
+                        margin: 11px 0px 35px 0px;
+                        max-width: 515px;
+                        transition: 0.21s;
+                        width: 100%;
+
+                        &:hover{
+                            background-color: @hover_btn;
+                        }
+                    }
+
+                    p{
+                        font-size: 17.5108px;
+                        text-align: center;
+                        
+                        #login_btn, #signup_2{
+                            background-color: transparent;
+                            border: none;
+                            color: @blue;
+                            cursor: pointer;
+                            display: inline-block;
+                            font-size: 17.5108px;
+                            padding: 0px;
+                            text-decoration: none;
+                            transition: 0.21s;
+
+                            &:hover{
+                                opacity: 0.8;
+                            }
+                        }
+
+                        #signup_2{
+                            margin-bottom: 99px;
+                        }
+                    }
+                }
+            }
+
+            .splash_side{
+                background-image: url("../../img/background.png");
+                background-size: cover;
+                display: inline-block;
+                height: 332.12px;
+                padding: 75px 0px 0px 51px;
+                vertical-align: top;
+                width: 205px;
+            }
+        }
+
+        .hide{
+            display: none;
+        }
+
+        #dashboard_container{
+            header{
+                display: flex;
+                align-items: center;
+                background-color: #1E1F25;
+                justify-content: space-between;
+                padding: 0px 26px 0px 25px;
+
+                img{
+                    background-size: cover;
+                    height: 28px;
+                    width: 138px;
+                }
+
+                #user_block{
+                    #username, #logout_container{
+                        color: @white;
+                        display: inline-block;
+                        padding: 22px 0px;
+                        vertical-align: top;
+                    }
+
+                    #username{
+                        border-right: solid 1px #3A3C46;
+                        padding-right: 26px;
+                    }
+                    
+                    #logout_container{
+                        text-decoration: none;
+                        
+                        #logout_icon{
+                            background-image: url("../../img/logout_icon.png");
+                            background-size: cover;
+                            color: @white;
+                            display: inline-block;
+                            height: 13px;
+                            margin: 0px 5px 0px 22px;
+                            width: 13px;
+                        }
+
+                        span{
+                            color: @white;
+                        }
+                    }
+                }
+            }
+
+            @media screen and (max-width: 445px) {
+                header{
+                    #user_block{
+                        #username{
+                            display: none;
+                        }
+                    }
+                }
+            
+            }
+    
+            @media screen and (max-width: 445px) {
+                header{
+                    #user_block{
+                        #logout_container{
+                            border-left: solid 1px #3A3C46;
+                            padding-left: 4px;
+                            span{
+                                display: none;
+                            }
+                        }
+                    }
+                }
+            }
+
+            #dashboard{
+                margin: 0px auto;
+                margin-top: 52px;
+                max-width: 978px;
+
+                h2{
+                    font: 21px roboto_regular, sans-serif;
+                    color: @white;
+                }
+                
+                p{
+                    font: 17.5108px roboto_regular, sans-serif;
+                }
+
+                #post_forum{
+                    margin: 56px 0px 53px 0px;
+                    position: relative;
+                    width: 100%;
+                    
+                    #post_textarea{
+                        background-color: #32333B;
+                        border-radius: 10px;
+                        border: none;
+                        font-size: 17.5108px;
+                        height: 80px;
+                        outline: none;
+                        overflow: hidden;
+                        padding: 14px 140px 14px 20px;
+                        resize: none;
+                        width: 100%;
+
+                        &::placeholder{
+                            color: @comment_text;
+                            font-size: 17.5108px;
+                        }
+                           
+                        &:focus{
+                            outline: solid 1px @blue;
+                        }
+
+                        &.error{
+                            outline: solid 1px @red;
+                        }
+                    }
+
+                    #post_btn{
+                        background-color: @blue;
+                        border-radius: 8.86px;
+                        border: none;
+                        bottom: 21px;
+                        box-sizing: border-box;
+                        color: @white;
+                        font: 14px roboto_regular, sans-serif;
+                        height: 38px;
+                        position: absolute;
+                        right: 20px;
+                        transition: 0.21s;
+                        width: 100px;
+
+                        &:hover{
+                            background-color: #0050C8;
+                        }
+                    }
+                }
+
+                #recent_forums{
+                    display: block;
+                    margin-bottom: 26px;
+                }
+
+                .forum_style{
+                    list-style: none;
+
+                    #empty_post{
+                        border-radius: 9px;
+                        border: 1px dashed #6D6E75;
+                        color: #6D6E75;
+                        font: 16px roboto_regular, sans-serif;
+                        padding: 34px 0px;
+                        text-align: center;
+                        width: 100%;
+
+                        &.hide{
+                            display: none;
+                        }
+                    }
+
+                    .forum_items{
+                        background-color: @forum_background;
+                        border-radius: 10px;
+                        margin-bottom: 30px;
+                        padding: 28px 30px 30px 30px;
+
+                        &.clone_forum{
+                            display: none;
+                        }
+
+                        .forum_content{
+                            font: 16px roboto_italic, sans-serif;
+                            color: @white;
+
+                            &.hide{
+                                display: none;
+                            }
+                        }
+
+                        .edit_forum{
+                            position: relative;
+
+                            &.hide{
+                                display: none;
+                            }
+
+                            &.hide{
+                                display: none;
+                            }
+
+                            #edit_forum_textarea{
+                                background-color: #3A3C46;
+                                border-radius: 10px;
+                                border: none;
+                                box-sizing: border-box;
+                                font-size: 16px;
+                                height: 80px;
+                                overflow: hidden;
+                                padding: 15px 140px 15px 20px;
+                                resize: none;
+                                width: 100%;
+
+                                &:focus{
+                                    outline: solid 1px @blue;
+                                }
+    
+                                &.error{
+                                    outline: solid 1px @red;
+                                }
+                            }
+
+                            #save_btn{
+                                background-color: @blue;
+                                border-radius: 8.86px;
+                                border: none;
+                                bottom: 20px;
+                                color: @white;
+                                font: 14px roboto_bold, sans-serif;
+                                height: 38px;
+                                position: absolute;
+                                right: 20px;
+                                transition: 0.21s;
+                                width: 100px;
+
+                                &:hover{
+                                    background-color: @hover_btn;
+                                }
+                            }
+                        }
+
+                        .forum_details{
+                            align-items: center;
+                            display: flex;
+                            justify-content: space-between;
+                            margin: 7px 0px 26px 0px;
+
+                            .author_details{
+                                span{
+                                    color: #A3A3FF;
+                                    display: inline-block;
+                                    font: 14px roboto_regular, sans-serif;
+
+                                    &:nth-child(2){
+                                        border-right: solid 1px #A3A3FF;
+                                        margin-right: 13px;
+                                        padding-right: 15px;
+                                    }
+                                }
+                            }
+
+                            .buttons{
+                                #forum_edit_btn, #forum_delete_btn{
+                                    background-color: #32333C;
+                                    border-radius: 4px;
+                                    border: solid 1px #606066;
+                                    height: 29px;
+                                    transition: 0.21s;
+                                    width: 29px;
+
+                                    &:hover{
+                                        background-color: @white;
+                                        border: solid 1px @white;
+                                    }
+
+                                    .edit_icon{
+                                        background-image: url("../../img/edit_icon.png");
+                                        background-size: cover;
+                                        display: inline-block;
+                                        height: 12px;
+                                        width: 12px;
+                                    }
+
+                                    .delete_icon{
+                                        background-image: url("../../img/delete_icon.png");
+                                        background-size: cover;
+                                        display: inline-block;
+                                        height: 12px;
+                                        width: 10px;
+                                    }
+                                }
+                            }
+                        }
+
+                        .comment_container{
+                            margin-left: 16px;
+
+                            .posted_comment{
+                                .post_comment{
+                                    &.hide{
+                                        display: none;
+                                    }
+                                }
+                            }
+
+                            .comment_textarea_container{
+                                position: relative;
+    
+                                #comment_textarea{
+                                    height: 80px;
+                                    box-sizing: border-box;
+                                    width: 100%;
+                                    border-radius: 10px;
+                                    background-color: #3A3C46;
+                                    border: none;
+                                    resize: none;
+                                    overflow: hidden;
+                                    padding: 15px 140px 15px 20px;
+                                    font-size: 16px;
+    
+                                    &:focus{
+                                        outline: solid 1px @blue;
+                                    }
+                                    
+                                    &.error{
+                                        outline: solid 1px @red;
+                                    }
+                                }
+    
+                                #comment_btn{
+                                    width: 100px;
+                                    height: 38px;
+                                    background-color: @blue;
+                                    transition: 0.21s;
+                                    border-radius: 8.86px;
+                                    border: none;
+                                    color: @white;
+                                    font: 14px roboto_bold, sans-serif;
+                                    position: absolute;
+                                    bottom: 20px;
+                                    right: 20px;
+    
+                                    &:hover{
+                                        background-color: @hover_btn;
+                                    }
+                                }
+                            }
+
+                            .post_comment{
+                                border-bottom: solid 1px #3F404A;
+                                margin: 23px 0px;
+
+                                &.hide{
+                                    display: none;
+                                }
+
+                                .comment_content{
+                                    color: @comment_text;
+                                    font: 16px roboto_italic, sans-serif;
+
+                                    &.hide{
+                                        display: none;
+                                    }
+                                }
+        
+                                .edit_comment{
+                                    position: relative;
+
+                                    &.hide{
+                                        display: none;
+                                    }
+        
+                                    #edit_comment_textarea{
+                                        background-color: #3A3C46;
+                                        border-radius: 10px;
+                                        border: none;
+                                        box-sizing: border-box;
+                                        font-size: 16px;
+                                        height: 80px;
+                                        overflow: hidden;
+                                        padding: 15px 140px 15px 20px;
+                                        resize: none;
+                                        width: 100%;
+        
+                                        &:focus{
+                                            outline: solid 1px @blue;
+                                        }
+                                        
+                                        &.error{
+                                            outline: solid 1px @red;
+                                        }
+
+                                        &.hide{
+                                            display: none;
+                                        }
+                                    }
+
+                                    .error{
+                                        outline: solid 1px @red;
+                                    }
+        
+                                    #save_comment_btn{
+                                        background-color: @blue;
+                                        border-radius: 8.86px;
+                                        border: none;
+                                        bottom: 20px;
+                                        color: @white;
+                                        font: 14px roboto_bold, sans-serif;
+                                        height: 38px;
+                                        position: absolute;
+                                        right: 20px;
+                                        transition: 0.21s;
+                                        width: 100px;
+        
+                                        &:hover{
+                                            background-color: @hover_btn;
+                                        }
+                                    }
+                                }
+        
+                                .comment_details{
+                                    align-items: center;
+                                    display: flex;
+                                    justify-content: space-between;
+                                    margin: 7px 0px 26px 0px;
+        
+                                    .author_details{
+                                        span{
+                                            color: #A3A3FF !important;
+                                            display: inline-block;
+                                            font: 14px roboto_regular, sans-serif;
+
+                                            &:nth-child(2){
+                                                margin-right: 13px;
+                                                padding-right: 15px;
+                                            }
+                                        }
+                                    }
+        
+                                    .buttons{
+                                        #comment_edit_btn, #comment_delete_btn{
+                                            background-color: #32333C;
+                                            border-radius: 4px;
+                                            border: solid 1px #606066;
+                                            height: 29px;
+                                            transition: 0.21s;
+                                            width: 29px;
+        
+                                            &:hover{
+                                                background-color: @white;
+                                                border: solid 1px @white;
+                                            }
+        
+                                            .edit_icon{
+                                                background-image: url("../../img/edit_icon.png");
+                                                background-size: cover;
+                                                display: inline-block;
+                                                height: 12px;
+                                                width: 12px;
+                                            }
+        
+                                            .delete_icon{
+                                                background-image: url("../../img/delete_icon.png");
+                                                background-size: cover;
+                                                display: inline-block;
+                                                height: 12px;
+                                                width: 10px;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            @media screen and (max-width: 1035px) {
+                #dashboard{
+                    max-width: 100%;
+                    padding: 0px 26px;
+                }
+            }
+
+            @media screen and (max-width: 530px) {
+                #dashboard{
+                    .forum_style{
+                        .forum_items{
+                            .comment_container {
+                                .comment_textarea_container{
+                                    #comment_textarea{
+                                        height: 174px;
+                                        padding: 15px 20px 60px 20px !important;
+                                    }
+                                }
+                            }
+
+                            .comment_container{
+                                .post_comment{
+                                    .edit_comment{
+                                        #edit_comment_textarea{
+                                            height: 174px;
+                                            padding: 15px 20px 60px 20px !important;
+                                        }
+                                    }
+                                }
+                            }
+                            .edit_forum{
+                                #edit_forum_textarea{
+                                    height: 174px !important;
+                                    padding: 15px 20px 60px 20px !important;
+                                }
+                            }
+                            .forum_details{
+                                .edit_forum{
+                                    #edit_forum_textarea{
+                                        height: 174px !important;
+                                        padding: 15px 20px 60px 20px !important;
+                                    }
+                                }
+                                .author_details{
+                                    span{
+                                        &:nth-child(2){
+                                            border: none;
+                                            display: none;
+                                        }
+                                    }
+                                }
+                            }
+
+                            .comment_container{
+                                .post_comment{
+                                    .comment_details{
+                                        span{
+                                            &:nth-child(2){
+                                                border: none;
+                                                display: none;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    #post_forum{
+                        #post_textarea{
+                            height: 174px;
+                            padding: 14px 20px 62px 20px !important;
+                        }
+                    }
+                }
+            }
+
+            @media screen and (max-width: 375px) {
+                #dashboard{
+                    .forum_style{
+                        .forum_items{
+                            .forum_details{
+                                .author_details{
+                                    span{
+                                        &:nth-child(1){
+                                            display: block;
+                                        }
+
+                                        &:nth-child(3){
+                                            display: block;
+                                        }
+                                    }
+                                }
+                            }
+
+                            .comment_container{
+                                .post_comment{
+                                    .comment_details{
+                                        span{
+                                            &:nth-child(1){
+                                                display: block;
+                                            }
+    
+                                            &:nth-child(3){
+                                                display: block;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
