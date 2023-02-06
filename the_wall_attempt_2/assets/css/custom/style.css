@@ -394,35 +394,97 @@ body #wrapper #dashboard_container #dashboard .forum_style .forum_items .forum_d
   margin-right: 13px;
   padding-right: 15px;
 }
-body #wrapper #dashboard_container #dashboard .forum_style .forum_items .forum_details .buttons #forum_edit_btn,
-body #wrapper #dashboard_container #dashboard .forum_style .forum_items .forum_details .buttons #forum_delete_btn {
+body #wrapper #dashboard_container #dashboard .forum_style .forum_items .forum_details .buttons {
+  position: relative;
+  overflow: hidden;
+}
+body #wrapper #dashboard_container #dashboard .forum_style .forum_items .forum_details .buttons #forum_edit_btn {
   background-color: #32333C;
   border-radius: 4px;
   border: solid 1px #606066;
   height: 29px;
   transition: 0.21s;
   width: 29px;
+  display: inline-block;
+  vertical-align: top;
 }
-body #wrapper #dashboard_container #dashboard .forum_style .forum_items .forum_details .buttons #forum_edit_btn:hover,
-body #wrapper #dashboard_container #dashboard .forum_style .forum_items .forum_details .buttons #forum_delete_btn:hover {
+body #wrapper #dashboard_container #dashboard .forum_style .forum_items .forum_details .buttons #forum_edit_btn:hover {
   background-color: #ffffff;
   border: solid 1px #ffffff;
 }
-body #wrapper #dashboard_container #dashboard .forum_style .forum_items .forum_details .buttons #forum_edit_btn .edit_icon,
-body #wrapper #dashboard_container #dashboard .forum_style .forum_items .forum_details .buttons #forum_delete_btn .edit_icon {
+body #wrapper #dashboard_container #dashboard .forum_style .forum_items .forum_details .buttons #forum_edit_btn .edit_icon {
   background-image: url("../../img/edit_icon.png");
   background-size: cover;
   display: inline-block;
   height: 12px;
   width: 12px;
 }
-body #wrapper #dashboard_container #dashboard .forum_style .forum_items .forum_details .buttons #forum_edit_btn .delete_icon,
+body #wrapper #dashboard_container #dashboard .forum_style .forum_items .forum_details .buttons #forum_delete_btn {
+  background-color: #32333C;
+  border-radius: 4px;
+  border: solid 1px #606066;
+  display: inline-block;
+  font-size: 0px;
+  text-align: left;
+  transition: 0.21s;
+  vertical-align: top;
+}
+body #wrapper #dashboard_container #dashboard .forum_style .forum_items .forum_details .buttons #forum_delete_btn:hover {
+  border: solid 1px #ffffff;
+  background-color: #ffffff;
+}
+body #wrapper #dashboard_container #dashboard .forum_style .forum_items .forum_details .buttons #forum_delete_btn.active {
+  border-radius: 4px 0px 0px 4px !important;
+  margin-right: 132px;
+}
+body #wrapper #dashboard_container #dashboard .forum_style .forum_items .forum_details .buttons #forum_delete_btn.active:hover {
+  border: solid 1px #606066 !important;
+  background-color: #32333C !important;
+}
 body #wrapper #dashboard_container #dashboard .forum_style .forum_items .forum_details .buttons #forum_delete_btn .delete_icon {
   background-image: url("../../img/delete_icon.png");
   background-size: cover;
   display: inline-block;
+  vertical-align: top;
   height: 12px;
   width: 10px;
+  margin: 7.5px 8.5px 7.5px 8.5px;
+}
+body #wrapper #dashboard_container #dashboard .forum_style .forum_items .forum_details .buttons #forum_delete_btn .confirm_container {
+  border: solid 1px #606066;
+  position: absolute;
+  width: 132px;
+  top: 0px;
+  right: -131px;
+  transition: 0.21s;
+  opacity: 0;
+  background-color: #32333C;
+  border-radius: 0px 4px 4px 0px;
+}
+body #wrapper #dashboard_container #dashboard .forum_style .forum_items .forum_details .buttons #forum_delete_btn .confirm_container.active {
+  right: 1px;
+  opacity: 1;
+}
+body #wrapper #dashboard_container #dashboard .forum_style .forum_items .forum_details .buttons #forum_delete_btn .confirm_container .confirm {
+  display: inline-block;
+  vertical-align: top;
+  font: 10px roboto_bold, sans-serif;
+  padding: 8px 4px 8px 8px;
+  color: #ffffff;
+}
+body #wrapper #dashboard_container #dashboard .forum_style .forum_items .forum_details .buttons #forum_delete_btn .confirm_container .no_forum_btn,
+body #wrapper #dashboard_container #dashboard .forum_style .forum_items .forum_details .buttons #forum_delete_btn .confirm_container .yes_forum_btn {
+  background-color: #32333C;
+  color: #6d7186;
+  display: inline-block;
+  font: 10px roboto_bold, sans-serif;
+  padding: 8px 4px;
+  transition: 0.21s;
+  vertical-align: top;
+}
+body #wrapper #dashboard_container #dashboard .forum_style .forum_items .forum_details .buttons #forum_delete_btn .confirm_container .no_forum_btn:hover,
+body #wrapper #dashboard_container #dashboard .forum_style .forum_items .forum_details .buttons #forum_delete_btn .confirm_container .yes_forum_btn:hover {
+  color: #a3a3ff;
 }
 body #wrapper #dashboard_container #dashboard .forum_style .forum_items .comment_container {
   margin-left: 16px;
@@ -542,35 +604,97 @@ body #wrapper #dashboard_container #dashboard .forum_style .forum_items .comment
   margin-right: 13px;
   padding-right: 15px;
 }
-body #wrapper #dashboard_container #dashboard .forum_style .forum_items .comment_container .post_comment .comment_details .buttons #comment_edit_btn,
-body #wrapper #dashboard_container #dashboard .forum_style .forum_items .comment_container .post_comment .comment_details .buttons #comment_delete_btn {
+body #wrapper #dashboard_container #dashboard .forum_style .forum_items .comment_container .post_comment .comment_details .buttons {
+  position: relative;
+  overflow: hidden;
+}
+body #wrapper #dashboard_container #dashboard .forum_style .forum_items .comment_container .post_comment .comment_details .buttons #comment_edit_btn {
   background-color: #32333C;
   border-radius: 4px;
   border: solid 1px #606066;
   height: 29px;
   transition: 0.21s;
   width: 29px;
+  display: inline-block;
+  vertical-align: top;
 }
-body #wrapper #dashboard_container #dashboard .forum_style .forum_items .comment_container .post_comment .comment_details .buttons #comment_edit_btn:hover,
-body #wrapper #dashboard_container #dashboard .forum_style .forum_items .comment_container .post_comment .comment_details .buttons #comment_delete_btn:hover {
+body #wrapper #dashboard_container #dashboard .forum_style .forum_items .comment_container .post_comment .comment_details .buttons #comment_edit_btn:hover {
   background-color: #ffffff;
   border: solid 1px #ffffff;
 }
-body #wrapper #dashboard_container #dashboard .forum_style .forum_items .comment_container .post_comment .comment_details .buttons #comment_edit_btn .edit_icon,
-body #wrapper #dashboard_container #dashboard .forum_style .forum_items .comment_container .post_comment .comment_details .buttons #comment_delete_btn .edit_icon {
+body #wrapper #dashboard_container #dashboard .forum_style .forum_items .comment_container .post_comment .comment_details .buttons #comment_edit_btn .edit_icon {
   background-image: url("../../img/edit_icon.png");
   background-size: cover;
   display: inline-block;
   height: 12px;
   width: 12px;
 }
-body #wrapper #dashboard_container #dashboard .forum_style .forum_items .comment_container .post_comment .comment_details .buttons #comment_edit_btn .delete_icon,
+body #wrapper #dashboard_container #dashboard .forum_style .forum_items .comment_container .post_comment .comment_details .buttons #comment_delete_btn {
+  background-color: #32333C;
+  border-radius: 4px;
+  border: solid 1px #606066;
+  display: inline-block;
+  font-size: 0px;
+  text-align: left;
+  transition: 0.21s;
+  vertical-align: top;
+}
+body #wrapper #dashboard_container #dashboard .forum_style .forum_items .comment_container .post_comment .comment_details .buttons #comment_delete_btn:hover {
+  border: solid 1px #ffffff;
+  background-color: #ffffff;
+}
+body #wrapper #dashboard_container #dashboard .forum_style .forum_items .comment_container .post_comment .comment_details .buttons #comment_delete_btn.active {
+  border-radius: 4px 0px 0px 4px !important;
+  margin-right: 132px;
+}
+body #wrapper #dashboard_container #dashboard .forum_style .forum_items .comment_container .post_comment .comment_details .buttons #comment_delete_btn.active:hover {
+  border: solid 1px #606066 !important;
+  background-color: #32333C !important;
+}
 body #wrapper #dashboard_container #dashboard .forum_style .forum_items .comment_container .post_comment .comment_details .buttons #comment_delete_btn .delete_icon {
   background-image: url("../../img/delete_icon.png");
   background-size: cover;
   display: inline-block;
+  vertical-align: top;
   height: 12px;
   width: 10px;
+  margin: 7.5px 8.5px 7.5px 8.5px;
+}
+body #wrapper #dashboard_container #dashboard .forum_style .forum_items .comment_container .post_comment .comment_details .buttons #comment_delete_btn .confirm_container {
+  border: solid 1px #606066;
+  position: absolute;
+  width: 132px;
+  top: 0px;
+  right: -131px;
+  transition: 0.21s;
+  opacity: 0;
+  background-color: #32333C;
+  border-radius: 0px 4px 4px 0px;
+}
+body #wrapper #dashboard_container #dashboard .forum_style .forum_items .comment_container .post_comment .comment_details .buttons #comment_delete_btn .confirm_container.active {
+  right: 1px;
+  opacity: 1;
+}
+body #wrapper #dashboard_container #dashboard .forum_style .forum_items .comment_container .post_comment .comment_details .buttons #comment_delete_btn .confirm_container .confirm {
+  display: inline-block;
+  vertical-align: top;
+  font: 10px roboto_bold, sans-serif;
+  padding: 8px 4px 8px 8px;
+  color: #ffffff;
+}
+body #wrapper #dashboard_container #dashboard .forum_style .forum_items .comment_container .post_comment .comment_details .buttons #comment_delete_btn .confirm_container .no_comment_btn,
+body #wrapper #dashboard_container #dashboard .forum_style .forum_items .comment_container .post_comment .comment_details .buttons #comment_delete_btn .confirm_container .yes_comment_btn {
+  background-color: #32333C;
+  display: inline-block;
+  vertical-align: top;
+  color: #6d7186;
+  font: 10px roboto_bold, sans-serif;
+  padding: 8px 4px;
+  transition: 0.21s;
+}
+body #wrapper #dashboard_container #dashboard .forum_style .forum_items .comment_container .post_comment .comment_details .buttons #comment_delete_btn .confirm_container .no_comment_btn:hover,
+body #wrapper #dashboard_container #dashboard .forum_style .forum_items .comment_container .post_comment .comment_details .buttons #comment_delete_btn .confirm_container .yes_comment_btn:hover {
+  color: #a3a3ff;
 }
 @media screen and (max-width: 1035px) {
   body #wrapper #dashboard_container #dashboard {

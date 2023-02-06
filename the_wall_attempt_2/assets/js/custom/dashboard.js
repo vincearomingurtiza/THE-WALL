@@ -39,9 +39,29 @@ function postForum(){
     });
 
     /* Delete Forum Listener*/
-    let forum_delete_btns = document.querySelectorAll("#forum_delete_btn");
+    let yes_forum_btns = document.querySelectorAll(".yes_forum_btn");
+    yes_forum_btns.forEach(function(active_yes_btn){
+        active_yes_btn.addEventListener("click", deleteForum);
+    });
+
+    /* Delete Add Animation */
+    let forum_delete_btns = document.querySelectorAll(".delete_icon");
     forum_delete_btns.forEach(function(active_delete_btn){
-        active_delete_btn.addEventListener("click", deleteForum);
+        active_delete_btn.addEventListener("click", function(){
+            let forum_delete_btn = this.closest("#forum_delete_btn");
+            forum_delete_btn.classList.add("active");
+            forum_delete_btn.querySelector(".confirm_container").classList.add("active");
+        });
+    });
+
+    /* Delete Remove Animation */
+    let no_forum_btns = document.querySelectorAll(".no_forum_btn");
+    no_forum_btns.forEach(function(active_no_btn){
+        active_no_btn.addEventListener("click", function(){
+            let confirm_container = this.closest(".confirm_container");
+            confirm_container.classList.remove("active");
+            confirm_container.closest("#forum_delete_btn").classList.remove("active");
+        });
     });
 
     /* Post Comment */
@@ -50,7 +70,6 @@ function postForum(){
         active_comment_btn.addEventListener("click", postComment);
     })
 };
-
 
 function editForum(){
     let forum_items = this.closest(".forum_items");
@@ -69,7 +88,7 @@ function editForum(){
      forum_save_btns.forEach(function(active_save_btn){
          active_save_btn.addEventListener("click", saveForum);
      }); 
-}
+};
 
 function saveForum(){
     let forum_items = this.closest(".forum_items");
@@ -86,7 +105,7 @@ function saveForum(){
     } else{
         edit_forum_textarea.classList.add("error");
     }
-}
+};
 
 function deleteForum(){
     let forum_item = this.closest(".forum_items");
@@ -98,7 +117,7 @@ function deleteForum(){
         let empty_post = document.querySelector("#empty_post");
         empty_post.style.display = "block";
     }
-}
+};
 
 function postComment(){
     let comment_container = this.closest(".comment_container");
@@ -108,7 +127,9 @@ function postComment(){
     let posted_comment = comment_container.querySelector(".posted_comment");
 
     if (comment_textarea.value.length != 0){
-        cloned_comment.setAttribute("class", "post_comment");
+        // cloned_comment.setAttribute("class", "post_comment");
+        cloned_comment.classList.add("post_comment");
+        cloned_comment.classList.remove("hide");
         cloned_comment.querySelector(".comment_content").textContent = comment_textarea.value;
         comment_textarea.classList.remove("error");
 
@@ -130,9 +151,29 @@ function postComment(){
         });
 
         /* Delete Comment Listener */
-        let comment_delete_btns = cloned_comment.querySelectorAll("#comment_delete_btn");
+        let yes_comment_btns = cloned_comment.querySelectorAll(".yes_comment_btn");
+        yes_comment_btns.forEach(function(active_yes_btn){
+            active_yes_btn.addEventListener("click", deleteComment);
+        });
+
+        /* Delete Add Animation */
+        let comment_delete_btns = document.querySelectorAll(".delete_icon");
         comment_delete_btns.forEach(function(active_delete_btn){
-            active_delete_btn.addEventListener("click", deleteComment);
+            active_delete_btn.addEventListener("click", function(){
+                let comment_delete_btn = this.closest("#comment_delete_btn");
+                comment_delete_btn.classList.add("active");
+                comment_delete_btn.querySelector(".confirm_container").classList.add("active");
+            });
+        });
+
+        /* Delete Remove Animation */
+        let no_comment_btns = document.querySelectorAll(".no_comment_btn");
+        no_comment_btns.forEach(function(active_no_btn){
+            active_no_btn.addEventListener("click", function(){
+                let confirm_container = this.closest(".confirm_container");
+                confirm_container.classList.remove("active");
+                confirm_container.closest("#comment_delete_btn").classList.remove("active");
+            });
         });
 
     } else{
@@ -176,7 +217,6 @@ function saveComment(){
 
         edit_comment.classList.add("hide");
         comment_content.classList.remove("hide");
-        
     } else{
         edit_comment_textarea.classList.add("error");
     }
@@ -185,9 +225,12 @@ function saveComment(){
 function deleteComment(){
     let post_comment = this.closest(".post_comment");
     post_comment.remove();
-
+    console.log("delete comment");
      /* Response Count */
-    //  let posted_comment = this.
+    //  let posted_comment = this.closest(".posted_comment");
+    //  let forum_items    = this.closest(".post_comment").parentNode;
+    //  console.log(post_comment.parentNode);
+    //  console.log(posted_comment.children.length);
     //  let response = this.closest(".forum_items").querySelector(".number_of_response");
     //  response.textContent = posted_comment.childElementCount + " Responses";
 };

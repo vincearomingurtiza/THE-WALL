@@ -451,15 +451,20 @@ body{
                                     }
                                 }
                             }
-
+                            
                             .buttons{
-                                #forum_edit_btn, #forum_delete_btn{
+                                position: relative;
+                                overflow: hidden;
+
+                                #forum_edit_btn{
                                     background-color: #32333C;
                                     border-radius: 4px;
                                     border: solid 1px #606066;
                                     height: 29px;
                                     transition: 0.21s;
                                     width: 29px;
+                                    display: inline-block;
+                                    vertical-align: top;
 
                                     &:hover{
                                         background-color: @white;
@@ -473,13 +478,80 @@ body{
                                         height: 12px;
                                         width: 12px;
                                     }
+                                }
+
+                                #forum_delete_btn{
+                                    background-color: #32333C;
+                                    border-radius: 4px;
+                                    border: solid 1px #606066;
+                                    display: inline-block;
+                                    font-size: 0px;
+                                    text-align: left;
+                                    transition: 0.21s;
+                                    vertical-align: top;
+                                    
+                                    &:hover{
+                                        border: solid 1px @white;
+                                        background-color: @white;
+                                    }
+                                    
+                                    &.active{
+                                        border-radius: 4px 0px 0px 4px !important;
+                                        margin-right: 132px;
+                                        
+                                        &:hover{
+                                            border: solid 1px #606066 !important;
+                                            background-color: #32333C !important;
+                                        }
+                                    }
 
                                     .delete_icon{
                                         background-image: url("../../img/delete_icon.png");
                                         background-size: cover;
                                         display: inline-block;
+                                        vertical-align: top;
                                         height: 12px;
                                         width: 10px;
+                                        margin: 7.5px 8.5px 7.5px 8.5px;
+                                    }
+                                    
+                                    .confirm_container{
+                                        border: solid 1px #606066;
+                                        position: absolute;
+                                        width: 132px;
+                                        top: 0px;
+                                        right: -131px;
+                                        transition: 0.21s;
+                                        opacity: 0;
+                                        background-color: #32333C;
+                                        border-radius: 0px 4px 4px 0px;
+
+                                        &.active{
+                                            right: 1px;
+                                            opacity: 1;
+                                        }
+
+                                        .confirm{
+                                            display: inline-block;
+                                            vertical-align: top;
+                                            font: 10px roboto_bold, sans-serif;
+                                            padding: 8px 4px 8px 8px;
+                                            color: @white;
+                                        }
+                                        
+                                        .no_forum_btn, .yes_forum_btn{
+                                            background-color: #32333C;
+                                            color: @font;
+                                            display: inline-block;
+                                            font: 10px roboto_bold, sans-serif;
+                                            padding: 8px 4px;
+                                            transition: 0.21s;
+                                            vertical-align: top;
+
+                                            &:hover{
+                                                color: @forum_details;
+                                            }
+                                        }
                                     }
                                 }
                             }
@@ -630,14 +702,50 @@ body{
                                         }
                                     }
         
+                                    // .buttons{
+                                    //     #comment_edit_btn, #comment_delete_btn{
+                                    //         background-color: #32333C;
+                                    //         border-radius: 4px;
+                                    //         border: solid 1px #606066;
+                                    //         height: 29px;
+                                    //         transition: 0.21s;
+                                    //         width: 29px;
+        
+                                    //         &:hover{
+                                    //             background-color: @white;
+                                    //             border: solid 1px @white;
+                                    //         }
+        
+                                    //         .edit_icon{
+                                    //             background-image: url("../../img/edit_icon.png");
+                                    //             background-size: cover;
+                                    //             display: inline-block;
+                                    //             height: 12px;
+                                    //             width: 12px;
+                                    //         }
+        
+                                    //         .delete_icon{
+                                    //             background-image: url("../../img/delete_icon.png");
+                                    //             background-size: cover;
+                                    //             display: inline-block;
+                                    //             height: 12px;
+                                    //             width: 10px;
+                                    //         }
+                                    //     }
+                                    // }
                                     .buttons{
-                                        #comment_edit_btn, #comment_delete_btn{
+                                        position: relative;
+                                        overflow: hidden;
+        
+                                        #comment_edit_btn{
                                             background-color: #32333C;
                                             border-radius: 4px;
                                             border: solid 1px #606066;
                                             height: 29px;
                                             transition: 0.21s;
                                             width: 29px;
+                                            display: inline-block;
+                                            vertical-align: top;
         
                                             &:hover{
                                                 background-color: @white;
@@ -651,13 +759,80 @@ body{
                                                 height: 12px;
                                                 width: 12px;
                                             }
+                                        }
+        
+                                        #comment_delete_btn{
+                                            background-color: #32333C;
+                                            border-radius: 4px;
+                                            border: solid 1px #606066;
+                                            display: inline-block;
+                                            font-size: 0px;
+                                            text-align: left;
+                                            transition: 0.21s;
+                                            vertical-align: top;
+                                            
+                                            &:hover{
+                                                border: solid 1px @white;
+                                                background-color: @white;
+                                            }
+                                            
+                                            &.active{
+                                                border-radius: 4px 0px 0px 4px !important;
+                                                margin-right: 132px;
+                                                
+                                                &:hover{
+                                                    border: solid 1px #606066 !important;
+                                                    background-color: #32333C !important;
+                                                }
+                                            }
         
                                             .delete_icon{
                                                 background-image: url("../../img/delete_icon.png");
                                                 background-size: cover;
                                                 display: inline-block;
+                                                vertical-align: top;
                                                 height: 12px;
                                                 width: 10px;
+                                                margin: 7.5px 8.5px 7.5px 8.5px;
+                                            }
+                                            
+                                            .confirm_container{
+                                                border: solid 1px #606066;
+                                                position: absolute;
+                                                width: 132px;
+                                                top: 0px;
+                                                right: -131px;
+                                                transition: 0.21s;
+                                                opacity: 0;
+                                                background-color: #32333C;
+                                                border-radius: 0px 4px 4px 0px;
+        
+                                                &.active{
+                                                    right: 1px;
+                                                    opacity: 1;
+                                                }
+        
+                                                .confirm{
+                                                    display: inline-block;
+                                                    vertical-align: top;
+                                                    font: 10px roboto_bold, sans-serif;
+                                                    padding: 8px 4px 8px 8px;
+                                                    color: @white;
+                                                }
+                                                
+                                                .no_comment_btn, .yes_comment_btn{
+                                                    background-color: #32333C;
+                                                    display: inline-block;
+                                                    vertical-align: top;
+                                                    color: @font;
+                                                    font: 10px roboto_bold, sans-serif;
+                                                    padding: 8px 4px;
+                                                    transition: 0.21s;
+        
+                                                    &:hover{
+                                                        color: @forum_details;
+                                                    }
+                                                }
                                             }
                                         }
                                     }
