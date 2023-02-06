@@ -185,4 +185,9 @@ function saveComment(){
 function deleteComment(){
     let post_comment = this.closest(".post_comment");
     post_comment.remove();
+
+     /* Response Count */
+    //  let posted_comment = this.
+    //  let response = this.closest(".forum_items").querySelector(".number_of_response");
+    //  response.textContent = posted_comment.childElementCount + " Responses";
 };
