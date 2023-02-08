@@ -224,13 +224,14 @@ function saveComment(){
 
 function deleteComment(){
     let post_comment = this.closest(".post_comment");
-    post_comment.remove();
     console.log("delete comment");
-     /* Response Count */
-    //  let posted_comment = this.closest(".posted_comment");
-    //  let forum_items    = this.closest(".post_comment").parentNode;
-    //  console.log(post_comment.parentNode);
-    //  console.log(posted_comment.children.length);
-    //  let response = this.closest(".forum_items").querySelector(".number_of_response");
-    //  response.textContent = posted_comment.childElementCount + " Responses";
+    
+    /* Response Count */
+    let comment_container = this.closest(".comment_container");
+    let posted_comment = comment_container.querySelector(".posted_comment");
+    let response = this.closest(".forum_style").querySelector(".number_of_response");
+    let response_count = posted_comment.childElementCount - 1;
+    
+    response.textContent = response_count + " Responses";
+    post_comment.remove();
 };

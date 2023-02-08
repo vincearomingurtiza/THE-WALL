@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="The Wall Forum Dashboard">
+    <title>RESTRUCTURE</title>
+    <link href="https://fonts.cdnfonts.com/css/roboto" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/custom/style.css">
+    <script src="./assets/js/custom/dashboard.js"></script>
+</head>
+<body>
+    <div id="wrapper">
+        <header>
+            <img src="./assets/img/header-the-wall-logo.png" alt="header the wall logo">
+            <div id="user_block">
+                <span id="user">Vince Gurtiza</span>
+                <a href="#">
+                    <span id="logout_icon"></span>
+                    <span>Logout</span>
+                </a>
+            </div>
+        </header>
+        <section id="dashboard">
+            <h2>Hello Vince,</h2>
+            <p>Welcome to V88 Forum Dashboard.</p>
+            <form id="post_forum_form" class="form_style">
+                <textarea id="post_textarea" placeholder="Post your Topic..."></textarea>
+                <button type="button" id="post_forum_btn">Post</button>
+            </form>
+            <span id="recent_forum">Recent Forums</span>
+            <div id="empty_forum" class="hide">No post yet.</div>
+            <ul class="posted_forum_list">
+                <!-- Append Cloned Forum Here... -->
+            </ul>
+            <ul class="clone_forum_list">
+                <li class="forum_item forum_style">
+                    <div class="article">
+                        <p class="forum_article"></p>
+                        <form class="edit_forum form_style hide">
+                            <textarea id="edit_forum_textarea" placeholder="Post your topic..."></textarea>
+                            <button type="submit" class="save_forum_btn">Save</button>
+                        </form>
+                    </div>
+                    <div class="forum_details details_style">
+                        <ul class="author_details">
+                            <li class="detail_item">Vince Gurtiza</li>
+                            <li class="detail_item">(few seconds ago)</li>
+                            <li class="detail_item">0 Responses</li>
+                        </ul>
+                        <div class="buttons">
+                            <button type="button" class="edit_forum_btn"><span class="edit_icon"></span></button>
+                            <button type="button" class="delete_forum_btn"><span class="delete_icon"></span></button>
+                            <ul class="confirm_list">
+                                <li class="confirm_item">Confirm Delete?</li>
+                                <li class="confirm_item">No</li>
+                                <li class="confirm_item">Yes</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <ul class="posted_comment">
+                        <!-- Append Cloned Comment Here -->
+                    </ul>
+                    <ul class="clone_comment_list">
+                        <li class="comment_item">
+                            <form class="comment_form form_style">
+                                <textarea id="comment_textarea" placeholder="Post your comment..."></textarea>
+                                <button type="submit" class="comment_btn">Comment</button>
+                            </form>
+                        </li>
+                        <li class="comment_item item_style">
+                            <div class="article">
+                                <p class="comment_article"></p>
+                                <form class="edit_comment_form form_style hide">
+                                    <textarea id="edit_comment_textarea" placeholder="Post your topic..."></textarea>
+                                    <button type="submit" class="save_comment_btn">Save</button>
+                                </form>
+                            </div>
+                            <div class="comment_details details_style">
+                                <ul class="author_details">
+                                    <li class="detail_item">Vince Gurtiza</li>
+                                    <li class="detail_item">(few seconds ago)</li>
+                                </ul>
+                                <div class="buttons">
+                                    <button type="button" class="edit_forum_btn"><span class="edit_icon"></span></button>
+                                    <button type="button" class="edit_forum_btn"><span class="delete_icon"></span></button>
+                                    <ul class="confirm_list">
+                                        <li>Confirm Delete?</li>
+                                        <li>No</li>
+                                        <li>Yes</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+    </div>
+</body>
+</html>
