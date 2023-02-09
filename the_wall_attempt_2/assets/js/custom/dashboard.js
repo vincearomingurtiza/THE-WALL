@@ -3,7 +3,14 @@ document.addEventListener("DOMContentLoaded", function(){
     post_btn.addEventListener("click", postForum);
 });
 
-function postForum(){
+// addComment("body", "hello");
+// addComment("div.comment", "hi");
+
+// function addComment (container, data){
+//     container.append(data)
+// }
+
+function postForum(post_textarea, comment_textarea){
     let forum = document.querySelector("#clone_container .forum_items");
     let cloned_forum = forum.cloneNode(true);
     let post_textarea = document.querySelector("#post_textarea");

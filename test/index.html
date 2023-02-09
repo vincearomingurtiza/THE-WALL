@@ -13,28 +13,21 @@
 <body>
     <div id="wrapper">
         <header>
-            <img src="./assets/img/header-the-wall-logo.png" alt="header the wall logo">
-            <div id="user_block">
-                <span id="user">Vince Gurtiza</span>
-                <a href="#">
-                    <span id="logout_icon"></span>
-                    <span>Logout</span>
-                </a>
-            </div>
+            <img id="image" src="./assets/img/header-the-wall-logo.png" alt="header the wall logo">
+            <span id="user">Vince Gurtiza</span>
+            <a href="#">Logout</a>
         </header>
         <section id="dashboard">
             <h2>Hello Vince,</h2>
-            <p>Welcome to V88 Forum Dashboard.</p>
+            <h1>Welcome to V88 Forum Dashboard.</h1>
             <form id="post_forum_form" class="form_style">
-                <textarea id="post_textarea" placeholder="Post your Topic..."></textarea>
-                <button type="button" id="post_forum_btn">Post</button>
+                <textarea class="textarea_element" id="post_textarea" placeholder="Post your Topic..."></textarea>
+                <button type="submit" class="post_btn">Post</button>
             </form>
-            <span id="recent_forum">Recent Forums</span>
-            <div id="empty_forum" class="hide">No post yet.</div>
-            <ul class="posted_forum_list">
-                <!-- Append Cloned Forum Here... -->
-            </ul>
-            <ul class="clone_forum_list">
+            <span id="recent_forum">Recent Forum</span>
+            <span class="empty_post hide">No post yet.</span>
+            <ul id="posted_forum_list"></ul>
+            <ul id="clone_forum_list">
                 <li class="forum_item forum_style">
                     <div class="article">
                         <p class="forum_article"></p>
@@ -43,57 +36,23 @@
                             <button type="submit" class="save_forum_btn">Save</button>
                         </form>
                     </div>
-                    <div class="forum_details details_style">
-                        <ul class="author_details">
-                            <li class="detail_item">Vince Gurtiza</li>
-                            <li class="detail_item">(few seconds ago)</li>
-                            <li class="detail_item">0 Responses</li>
-                        </ul>
-                        <div class="buttons">
-                            <button type="button" class="edit_forum_btn"><span class="edit_icon"></span></button>
-                            <button type="button" class="delete_forum_btn"><span class="delete_icon"></span></button>
-                            <ul class="confirm_list">
-                                <li class="confirm_item">Confirm Delete?</li>
-                                <li class="confirm_item">No</li>
-                                <li class="confirm_item">Yes</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <ul class="posted_comment">
-                        <!-- Append Cloned Comment Here -->
-                    </ul>
-                    <ul class="clone_comment_list">
-                        <li class="comment_item">
-                            <form class="comment_form form_style">
-                                <textarea id="comment_textarea" placeholder="Post your comment..."></textarea>
-                                <button type="submit" class="comment_btn">Comment</button>
+                    <ul class="forum_details details_style">
+                        <li class="author_details"><span>Vince Gurtiza </span><span>(few seconds ago)</span><span class="response">0 Responses</span></li>
+                        <li class="buttons">
+                            <button type="button" class="edit_btn"><span class="edit_icon"></span></button>
+                            <button type="button" class="delete_btn"><span class="delete_icon"></span></button>
+                            <form class="confirm_form">
+                                <span>Confirm Delete?</span>
+                                <button type="button" class="no_btn">No</button>
+                                <button type="submit" class="yes_btn">Yes</button>
                             </form>
                         </li>
-                        <li class="comment_item item_style">
-                            <div class="article">
-                                <p class="comment_article"></p>
-                                <form class="edit_comment_form form_style hide">
-                                    <textarea id="edit_comment_textarea" placeholder="Post your topic..."></textarea>
-                                    <button type="submit" class="save_comment_btn">Save</button>
-                                </form>
-                            </div>
-                            <div class="comment_details details_style">
-                                <ul class="author_details">
-                                    <li class="detail_item">Vince Gurtiza</li>
-                                    <li class="detail_item">(few seconds ago)</li>
-                                </ul>
-                                <div class="buttons">
-                                    <button type="button" class="edit_forum_btn"><span class="edit_icon"></span></button>
-                                    <button type="button" class="edit_forum_btn"><span class="delete_icon"></span></button>
-                                    <ul class="confirm_list">
-                                        <li>Confirm Delete?</li>
-                                        <li>No</li>
-                                        <li>Yes</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </li>
                     </ul>
+                    <form class="comment_form form_style">
+                        <textarea class="textarea_element" id="comment_textarea" placeholder="Post your comment..."></textarea>
+                        <button type="submit" class="comment_btn post_btn">Comment</button>
+                    </form>
+                    <ul class="posted_comment"></ul>
                 </li>
             </ul>
         </section>

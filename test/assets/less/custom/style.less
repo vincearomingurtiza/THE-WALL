@@ -12,7 +12,7 @@
     outline: solid 1px @red;
 }
 .hide{
-    display: none;
+    display: none !important;
 }
 ul{
     list-style: none;
@@ -77,13 +77,14 @@ ul{
     position: relative;
     position: relative;
     .author_details{
-        .detail_item{
+        span{
             display: inline-block;
             vertical-align: top;
-            &:nth-child(3){
+            &.response{
                 border-left: solid 1px @violet;
                 margin-left: 12px;
                 padding-left: 16px;
+                display: inline-block;
             }
         }
     }
@@ -99,11 +100,11 @@ ul{
                     border-width: 1px 0px 1px 1px;
                 }
             }
-            .confirm_list{
+            .confirm_form{
                 opacity: 1 !important;
             }
         }
-        button{
+        .edit_btn, .delete_btn{
             background-color: #32333C;
             border-radius: 4px;
             border: solid 1px #606066;
@@ -133,7 +134,7 @@ ul{
                 width: 10px;
             }
         }
-        .confirm_list{
+        .confirm_form{
             background-color: #32333C;
             border-radius: 0px 4px 4px 0px;
             border: solid 1px #606066;
@@ -145,24 +146,20 @@ ul{
             right: -140px;
             transition: 0.21s;
             vertical-align: top;
-            &.active{
-                opacity: 1;
-                right: 0px;
-            }
-            .confirm_item{
-                display: inline-block;
+            width: 140px;
+            box-sizing: border-box;
+            font-size: 0px;
+            span, button{
                 font-size: 10px;
+                display: inline-block;
                 vertical-align: top;
-                &:nth-child(1){
-                    color: @white;
-                }
-                &:nth-child(2), &:nth-child(3){
-                    color: #6D7186;
-                    transition: 0.21s;
-                    &:hover{
-                        color: @violet;
-                    }
-                }
+            }
+            .no_btn, .yes_btn{
+                background-color: transparent;
+                border: none;
+                outline: none;
+                color: #6D7186;
+                padding: 0px 0px 0px 5px;
             }
         }
     }
@@ -170,7 +167,7 @@ ul{
 @media screen and (max-width: 550px) {
     .details_style{
         .author_details{
-            .detail_item{
+            span{
                 &:nth-child(2){
                     display: none;
                 }
@@ -181,7 +178,7 @@ ul{
 @media screen and (max-width: 420px) {
     .details_style{
         .author_details{
-            .detail_item{
+            span{
                 &:last-child{
                    border: none;
                    display: block;
@@ -200,50 +197,45 @@ body{
         align-items: center;
         background-color: #1E1F25;
         display: flex;
-        justify-content: space-between;
         margin-bottom: 48px;
         padding: 0px 25px;
-        #user_block{
+        text-align: right;
+        justify-content: flex-end;
+        position: relative;
+        color: @white;
+        img{
+            position: absolute;
+            left: 25px;
+        }
+        #user{
+            font: 14px 'Roboto', sans-serif;
+            margin-right: 26px;
+        }
+        a{
+            border-left: solid 1px #3A3C46;
+            display: inline-block;
+            font: 14px 'Roboto', sans-serif;
+            padding: 23px 0px 23px 26px;
             color: @white;
-            font-size: 0px;
-            #user{
-                font: 14px 'Roboto', sans-serif;
-                margin-right: 26px;
-            }
-            a{
-                border-left: solid 1px #3A3C46;
+            text-decoration: none;
+            &::before{
+                content: url("../../img/logout_icon.png");
                 display: inline-block;
-                font: 14px 'Roboto', sans-serif;
-                padding: 23px 0px 23px 26px;
-                text-decoration: none;
-                span{
-                    color: @white;
-                    display: inline-block;
-                    padding: 19.5 8px;
-                    vertical-align: top;
-                    &#logout_icon{
-                        background-image: url("../../img/logout_icon.png");
-                        display: inline-block;
-                        height: 13px;
-                        margin: 2px 5px 0px 0px;
-                        width: 13px;
-                    }
-                }
+                width: 13px;
+                height: 13px;
+                margin: 0px 10px 0px 0px;
             }
         }
         @media screen and (max-width: 445px) {
-            #user_block{
-                #user{
-                    display: none;
-                }
+            #user{
+                display: none;
             }
         }
         @media screen and (max-width: 375px) {
-            #user_block{
-                a{
-                    span:nth-child(2){
-                        display: none;
-                    }
+            a{
+                font-size: 0px;
+                &::before{
+                    margin: 0px;
                 }
             }
         }
@@ -256,25 +248,9 @@ body{
             font: 21px 'Roboto Black', sans-serif;
             margin-bottom: 7px;
         }
-        p{
+        h1{
             color: #6D7186;
             font-size: 17.5108px;
-        }
-        #recent_forum{
-            color: @white;
-            display: block;
-            font-size: 16px;
-            margin-bottom: 16px;
-        }
-        #empty_forum{
-            border-radius: 9px;
-            border: dashed 1px #6D6E75;
-            color: @white;
-            font-size: 16px;
-            margin-top: 49px;
-            padding: 34.5px 0px;
-            text-align: center;
-            width: 100%;
         }
         #post_forum_form{
             margin: 55px 0px;
@@ -282,10 +258,27 @@ body{
                 background-color: #32333B !important;
             }
         }
-        .clone_forum_list, .posted_forum_list{
+        #recent_forum{
+            color: @white;
+            display: block;
+            font-size: 16px;
+            margin-bottom: 16px;;
+        }
+        .empty_post{
+            border-radius: 9px;
+            border: dashed 1px #6D6E75;
+            color: @white;
+            display: block;
+            font-size: 16px;
+            margin-top: 49px;
+            padding: 34.5px 0px;
+            text-align: center;
+            width: 100%;
+        }
+        #clone_forum_list, #posted_forum_list{
             list-style: none;
             .forum_style{
-                background-color: #1E1F25;
+                background-color: #1E1F25 !important;
                 border-radius: 10px;
                 margin-bottom: 30px;
                 padding: 0px 30px 8px 30px;
@@ -302,16 +295,18 @@ body{
                         }
                     }
                 }
+                .comment_form{
+                    margin-top: 26px;
+                }
                 .posted_comment, .clone_comment_list{
                     margin-left: 16px;
+                    margin-bottom: 20px;
                     .comment_item{
                         border-bottom: solid 1px #3F404A;
                         padding-bottom: 22px;
-                        &:first-child{
-                            padding-bottom: 0px;
-                        }
-                        &:nth-child(1), &:last-child{
+                        &:last-child{
                             border: none;
+                            padding-bottom: 0px !important;
                         }
                         .comment_form{
                             margin-top: 26px;

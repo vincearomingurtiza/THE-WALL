@@ -1,27 +1,31 @@
 console.log("I'M DASHBOARD!");
 document.addEventListener("DOMContentLoaded", function(){
-    initializeDashboard();
-    let post_forum_btn = document.querySelector("#post_forum_btn");
-    post_forum_btn.addEventListener("click", postForum);
-    initializeDashboard();
+    // initializeDashboard();
+    let post_btns = document.querySelectorAll(".post_btn");
+    post_btns.forEach(function(active_post_btn){
+        active_post_btn.addEventListener("click", postThis);
+    })
 });
 
-function initializeDashboard(){
+function initializeDashboard (){
+    console.log("---");
     setTimeout(function(){
         initializeDashboard();
     }, 33);
 };
 
-function postForum(){
-    let posted_forum_list = document.querySelector(".posted_forum_list");
-    let post_forum_textarea = document.querySelector("#post_textarea");
-
-    let forum_item = document.querySelector(".forum_item");
-    let cloned_forum = forum_item.cloneNode(true);
-    let forum_paragraph = cloned_forum.querySelector(".forum_article");
-
-    forum_paragraph.value = post_forum_textarea.value;
-    console.log(post_forum_textarea.value);
-    
-    posted_forum_list.append(cloned_forum);
+function postThis (event){
+    console.log(event.target);
+    let form_container = event.target.closest(".form_style");
+    let textarea = form_container.querySelector(".textarea_element");
+    console.log(textarea.value);
+    // clone();
 };
+
+// function clone (){
+//     let list = document.querySelector(".forum_style");
+//     let cloned_list = list.cloneNode(true);
+//     let posted_forum = document.querySelector("#posted_forum_list");
+
+//     posted_forum.appendChild(cloned_list);
+// }
