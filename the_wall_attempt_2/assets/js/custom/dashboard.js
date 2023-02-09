@@ -4,9 +4,9 @@ document.addEventListener("DOMContentLoaded", function(){
 });
 
 function postForum(){
-    let post_textarea = document.querySelector("#post_textarea");
     let forum = document.querySelector("#clone_container .forum_items");
     let cloned_forum = forum.cloneNode(true);
+    let post_textarea = document.querySelector("#post_textarea");
     let forum_content = cloned_forum.querySelector(".forum_content");
     let posted_forum = document.querySelector("#posted_forum");
 
