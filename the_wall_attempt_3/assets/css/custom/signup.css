@@ -1,0 +1,130 @@
+* {
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+label {
+  color: #6d7186;
+  display: block;
+  font: 14px/16px "Roboto", sans-serif;
+  margin: 17px 0px 9px 0px;
+}
+input {
+  background-color: #31354f;
+  border-radius: 9px;
+  border: none;
+  color: #ffffff;
+  display: block;
+  font-size: 16px;
+  outline: none;
+  padding: 21px 20px;
+  width: 100%;
+}
+input:focus {
+  border: solid 1px #00a3ff;
+}
+.error {
+  border: solid 1px #eb5757;
+}
+body {
+  background-color: #2C2D34;
+  padding: 220px 0px;
+}
+body #wrapper #signup_form,
+body #wrapper #signin_form {
+  background-color: #1D1F2B;
+  border-radius: 20px;
+  font-size: 0px;
+  max-width: 876px;
+  margin: 0px auto;
+  overflow: hidden;
+  padding: 75px 283px 75px 78px;
+  position: relative;
+}
+body #wrapper #signup_form::after,
+body #wrapper #signin_form::after {
+  background-color: #3B3C43;
+  background-image: url("../../img/background.png");
+  background-repeat: no-repeat;
+  box-sizing: border-box;
+  content: url("../../img/splash_the_wall_logo.png");
+  height: 100%;
+  padding: 78px 0px 0px 51px;
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  width: 205px;
+}
+body #wrapper #signup_form h2,
+body #wrapper #signin_form h2 {
+  color: #ffffff;
+  font: 21px/17px "Roboto", sans-serif;
+  padding: 0px 0px 8px 75px;
+  position: relative;
+}
+body #wrapper #signup_form h2::before,
+body #wrapper #signin_form h2::before {
+  content: url("../../img/the_wall_logo_violet.png");
+  left: 0px;
+  position: absolute;
+}
+body #wrapper #signup_form h1,
+body #wrapper #signin_form h1 {
+  color: #6d7186;
+  font: 17.5108px/21px "Roboto", sans-serif;
+  margin-bottom: 30px;
+  padding-left: 75px;
+}
+body #wrapper #signup_form h1#login,
+body #wrapper #signin_form h1#login {
+  margin-bottom: 47px;
+}
+body #wrapper #signup_form .input_container,
+body #wrapper #signin_form .input_container {
+  display: inline-block;
+  vertical-align: top;
+  width: 48.54%;
+}
+body #wrapper #signup_form .input_container.style,
+body #wrapper #signin_form .input_container.style {
+  margin-right: 15px;
+}
+body #wrapper #signup_form button,
+body #wrapper #signin_form button {
+  background-color: #00a3ff;
+  border-radius: 9px;
+  border: none;
+  color: #ffffff;
+  font: 700 21px/25px "Roboto", sans-serif;
+  height: 60px;
+  margin: 30px 0px 40px 0px;
+  outline: none;
+  transition: 0.21s;
+  width: 100%;
+}
+body #wrapper #signup_form button:hover,
+body #wrapper #signin_form button:hover {
+  background-color: #0050c8;
+}
+body #wrapper #signup_form p,
+body #wrapper #signin_form p {
+  color: #6d7186;
+  font-size: 17.5108px;
+  text-align: center;
+}
+body #wrapper #signup_form p a,
+body #wrapper #signin_form p a {
+  color: #00a3ff;
+  cursor: pointer;
+  text-decoration: none;
+  transition: 0.21s;
+}
+body #wrapper #signup_form p a:hover,
+body #wrapper #signin_form p a:hover {
+  opacity: 0.8;
+}
+body #wrapper #signup_form p#login_paragraph,
+body #wrapper #signin_form p#login_paragraph {
+  margin-bottom: 102px;
+}

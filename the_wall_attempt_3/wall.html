@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="THE WALL DASHBOARD">
+    <title>THE WALL</title>
+    <link href="https://fonts.cdnfonts.com/css/roboto" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/custom/wall.css">
+    <script src="./assets/js/custom/wall.js"></script>
+</head>
+<body>
+    <div id="wrapper">
+        <header>
+            <span id="user">Vince Gurtiza</span>
+            <a href="login.html" id="logout">Logout</a>
+        </header>
+        <section id="dashboard">
+            <h2>Hello Vince,</h2>
+            <h1>Welcome to V88 Forum Dashboard</h1>
+            <form id="post_form" class="form_style">
+                <textarea id="post_textarea" placeholder="Post your Topic..."></textarea>
+                <button type="submit">Post</button>
+            </form>
+            <span id="recent_forum">Recent Forums</span>
+            <div id="empty_post">No post yet.</div>
+            <ul id="posted_forum"></ul>
+            <ul id="forum_list">
+                <li class="forum_item item_style clone_forum">
+                    <div class="article">
+                        <p class="forum_article">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, aliquam harum! Maxime rem voluptatem laudantium sapiente molestias quia ducimus incidunt enim suscipit, vitae quasi blanditiis delectus atque placeat commodi aut.</p>
+                        <form class="edit_form form_style hide">
+                            <textarea id="edit_forum" placeholder="Post your Topic..."></textarea>
+                            <button type="submit">Save</button>
+                        </form>
+                    </div>
+                    <ul class="details_list">
+                        <li class="author_details"><span>Vince Gurtiza</span><span> (few seconds ago)</span><span class="responses">0 Responses</span></li>
+                        <li class="buttons">
+                            <button type="button" class="edit_btn"><span class="edit_icon"></span></button>
+                            <button type="button" class="delete_btn"><span class="delete_icon"></span></button>
+                            <form class="confirm_form">
+                                <span>Confirm Delete?</span>
+                                <button type="button" class="no_btn">No</button>
+                                <button type="submit" class="yes_btn">Yes</button>
+                            </form>
+                        </li>
+                    </ul>
+                    <form id="comment_form" class="form_style">
+                        <textarea id="comment_textarea" placeholder="Post your comment..."></textarea>
+                        <button type="submit">Comment</button>
+                    </form>
+                    <ul id="posted_comment"></ul>
+                    <ul id="comment_list">
+                        <li class="comment_item item_style clone_comment">
+                            <div class="article">
+                                <p class="comment_article">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, aliquam harum! Maxime rem voluptatem laudantium sapiente molestias quia ducimus incidunt enim suscipit, vitae quasi blanditiis delectus atque placeat commodi aut.</p>
+                                <form class="edit_comment form_style hide">
+                                    <textarea id="edit_comment_textarea" placeholder="Post your Topic..."></textarea>
+                                    <button type="submit">Save</button>
+                                </form>
+                            </div>
+                            <ul class="details_list comment_details">
+                                <li class="author_details"><span>Vince Gurtiza</span><span> (few seconds ago)</span></li>
+                                <li class="buttons">
+                                    <button type="button" class="edit_btn"><span class="edit_icon"></span></button>
+                                    <button type="button" class="delete_btn"><span class="delete_icon"></span></button>
+                                    <form class="confirm_form">
+                                        <span>Confirm Delete?</span>
+                                        <button type="button" class="no_btn">No</button>
+                                        <button type="submit" class="yes_btn">Yes</button>
+                                    </form>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+    </div>
+</body>
+</html>

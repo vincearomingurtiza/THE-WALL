@@ -1,0 +1,128 @@
+@white: #fff;
+@input: #31354F;
+@wall_input: #A3A3FF;
+@fade: #6D7186;
+@blue: #00A3FF;
+@red: #EB5757;
+@violet: #A3A3FF;
+@hover: #0050C8;
+@border: #3F404A;
+@comment: #9496A1;
+*{
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+    margin: 0;
+    padding: 0;
+}
+label{
+    color: @fade;
+    display: block;
+    font: 14px/16px "Roboto", sans-serif;
+    margin: 17px 0px 9px 0px;
+}
+input{
+    background-color: @input;
+    border-radius: 9px;
+    border: none;
+    color: @white;
+    display: block;
+    font-size: 16px;
+    outline: none;
+    padding: 21px 20px;
+    width: 100%;
+    &:focus{
+        border: solid 1px @blue;
+    }
+}
+.error{
+    border: solid 1px @red;
+}
+body{
+    background-color: #2C2D34;
+    padding: 220px 0px;
+    #wrapper{
+        #signup_form, #signin_form{
+            background-color: #1D1F2B;
+            border-radius: 20px;
+            font-size: 0px;
+            max-width: 876px;
+            margin: 0px auto;
+            overflow: hidden;
+            padding: 75px 283px 75px 78px;
+            position: relative;
+            &::after{
+                background-color: #3B3C43;
+                background-image: url("../../img/background.png");
+                background-repeat: no-repeat;
+                box-sizing: border-box;
+                content: url("../../img/splash_the_wall_logo.png");
+                height: 100%;
+                padding: 78px 0px 0px 51px;
+                position: absolute;
+                right: 0px;
+                top: 0px;
+                width: 205px;
+            }
+            h2{
+                color: @white;
+                font: 21px/17px "Roboto", sans-serif;
+                padding: 0px 0px 8px 75px;
+                position: relative;
+                &::before{
+                    content: url("../../img/the_wall_logo_violet.png");
+                    left: 0px;
+                    position: absolute;
+                }
+            }
+            h1{
+                color: @fade;
+                font: 17.5108px/21px "Roboto", sans-serif;
+                margin-bottom: 30px;
+                padding-left: 75px;
+                &#login{
+                    margin-bottom: 47px;
+                }
+            }
+            .input_container{
+                display: inline-block;
+                vertical-align: top;
+                width: 48.54%;
+                &.style{
+                    margin-right: 15px;
+                }
+            }
+            button{
+                background-color: @blue;
+                border-radius: 9px;
+                border: none;
+                color: @white;
+                font: 700 21px/25px "Roboto", sans-serif;
+                height: 60px;
+                margin: 30px 0px 40px 0px;
+                outline: none;
+                transition: 0.21s;
+                width: 100%;
+                &:hover{
+                    background-color: @hover;
+                }
+            }
+            p{
+                color: @fade;
+                font-size: 17.5108px;
+                text-align: center;
+                a{
+                    color: @blue;
+                    cursor: pointer;
+                    text-decoration: none;
+                    transition: 0.21s;
+                    &:hover{
+                        opacity: 0.8;
+                    }
+                }
+                &#login_paragraph{
+                    margin-bottom: 102px;
+                }
+            }
+        }
+    }
+}
